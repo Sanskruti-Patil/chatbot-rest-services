@@ -23,6 +23,9 @@ public class OrderEntity {
 		this.item = item;
 	}
 
+	public OrderEntity() {
+	}
+
 	public Long getId() {
 		return id;
 	}
