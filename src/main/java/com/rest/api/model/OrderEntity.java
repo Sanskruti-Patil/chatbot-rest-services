@@ -8,34 +8,39 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="SHOP")
+@Table(name = "SHOP")
 public class OrderEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
-    @Column(name="item")
-    private String item;
-    
-    public Long getId() {
-		return id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	@Column(name = "item")
+	private String item;
+
+	public OrderEntity(String item) {
+		super();
+		this.item = item;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public Long getId() {
+		return id;
 	}
 
 	public String getItem() {
 		return item;
 	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public void setItem(String item) {
 		this.item = item;
 	}
 
-    @Override
-    public String toString() {
-        return "OrderEntity [id=" + id + ", item=" + item + "]";
-    }
+	@Override
+	public String toString() {
+		return "OrderEntity [id=" + id + ", item=" + item + "]";
+	}
 }
